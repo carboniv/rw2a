@@ -49,14 +49,22 @@ scoreboard objectives add rw2a.AllowConsumable trigger
 scoreboard objectives add rw2a.ConsumableOff dummy
 scoreboard players add $change-to rw2a.ConsumableOff 0
 
+#
+#
+#
+
+## rw2a.rw2a.DisplayGlobals
+scoreboard objectives add rw2a.DisplayGlobals trigger
+
+#
+#
+#
+
+#! TOREMOVE v
+
 ## rw2a.PullThatShitUpJamie
 scoreboard objectives add rw2a.PullThatShitUpJamie trigger
 scoreboard objectives add rw2a.Temp dummy
-
-
-
-
-#! TOREMOVE v
 
 ## rw2a.TempAddEnts
 scoreboard objectives add rw2a.TempAddEnts trigger

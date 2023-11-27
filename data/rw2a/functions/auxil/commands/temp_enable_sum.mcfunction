@@ -1,6 +1,3 @@
-
-scoreboard players set $temp rw2a.Globals 0
-
-execute as @e[scores={rw2a.Temp=-2147483648..2147483647}] run scoreboard players add $temp rw2a.Globals 1
-
-scoreboard players operation $SUM rw2a.Temp = $temp rw2a.Globals
+execute if score $TempEnableSum rw2a.Globals matches 0 run scoreboard players set $temp rw2a.Globals 1
+execute if score $TempEnableSum rw2a.Globals matches 1 run scoreboard players set $temp rw2a.Globals 0
+scoreboard players operation $TempEnableSum rw2a.Globals = $temp rw2a.Globals

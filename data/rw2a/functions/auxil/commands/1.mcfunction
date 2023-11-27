@@ -19,6 +19,18 @@ scoreboard players enable @a rw2a.AllowConsumable
 execute as @a[scores={rw2a.AllowConsumable=1..}] run function rw2a:auxil/commands/allow_consumable
 scoreboard players set @a rw2a.AllowConsumable 0
 
+#
+#
+#
+
+#! TESTING v
+
+## rw2a.DisplayGlobals
+scoreboard players add @a[scores={rw2a.DisplayGlobals=0..}] rw2a.DisplayGlobals 0
+scoreboard players enable @a rw2a.DisplayGlobals
+execute as @a[scores={rw2a.DisplayGlobals=1..}] run scoreboard objectives setdisplay sidebar rw2a.Globals
+scoreboard players set @a rw2a.DisplayGlobals 0
+
 #! TOREMOVE v
 
 ## rw2a.PullThatShitUpJamie
@@ -28,6 +40,7 @@ scoreboard players set @a rw2a.PullThatShitUpJamie 0
 
 ## rw2a.TempAddEnts
 scoreboard players enable @a rw2a.TempAddEnts
+#execute as @a[scores={rw2a.TempAddEnts=1..}] run scoreboard players add @e rw2a.Temp 0
 execute as @a[scores={rw2a.TempAddEnts=1..}] run scoreboard players add @e rw2a.Temp 1
 scoreboard players set @a rw2a.TempAddEnts 0
 
@@ -41,27 +54,25 @@ scoreboard players enable @a rw2a.TempEnableAdder
 execute as @a[scores={rw2a.TempEnableAdder=1..}] run function rw2a:auxil/commands/temp_enable_adder
 scoreboard players set @a rw2a.TempEnableAdder 0
 
-execute if score $TempEnableAdder rw2a.Globals matches 1 run scoreboard players add @e[scores={rw2a.Dummy=-2147483648..2147483647}] rw2a.Dummy 1
+execute if score $TempEnableAdder rw2a.Globals matches 1 run function rw2a:auxil/commands/temp_enable_adder1
 #
 #
 
 ## rw2a.TempEnableEverythingAdder
 scoreboard players enable @a rw2a.TempEnableEverythingAdder
-execute as @a[scores={rw2a.TempEnableEverythingAdder=1..}] if score $TempEnableEverythingAdder rw2a.Globals matches 0 run scoreboard players set $TempEnableEverythingAdder rw2a.Globals 1
-execute as @a[scores={rw2a.TempEnableEverythingAdder=1..}] if score $TempEnableEverythingAdder rw2a.Globals matches 1 run scoreboard players set $TempEnableEverythingAdder rw2a.Globals 0
+execute as @a[scores={rw2a.TempEnableEverythingAdder=1..}] run function rw2a:auxil/commands/temp_enable_everything_adder
 scoreboard players set @a rw2a.TempEnableEverythingAdder 0
 
-execute if score $TempEnableEverythingAdder rw2a.Globals matches 1 run scoreboard players add @e rw2a.Dummy 1
+execute if score $TempEnableEverythingAdder rw2a.Globals matches 1 run function rw2a:auxil/commands/temp_enable_everything_adder1
 #
 #
 
 ## rw2a.TempEnableSum
 scoreboard players enable @a rw2a.TempEnableSum
-execute as @a[scores={rw2a.TempEnableSum=1..}] if score $TempEnableSum rw2a.Globals matches 0 run scoreboard players set $TempEnableSum rw2a.Globals 1
-execute as @a[scores={rw2a.TempEnableSum=1..}] if score $TempEnableSum rw2a.Globals matches 1 run scoreboard players set $TempEnableSum rw2a.Globals 0
+execute as @a[scores={rw2a.TempEnableSum=1..}] run function rw2a:auxil/commands/temp_enable_sum
 scoreboard players set @a rw2a.TempEnableSum 0
 
-execute if score $TempEnableSum rw2a.Globals matches 1 run function rw2a:auxil/commands/temp_enable_sum
+execute if score $TempEnableSum rw2a.Globals matches 1 run function rw2a:auxil/commands/temp_enable_sum1
 #
 #
 
@@ -73,7 +84,7 @@ scoreboard players set @a rw2a.PigOut 0
 
 ## rw2a.GetRidOfEm
 scoreboard players enable @a rw2a.GetRidOfEm
-execute as @a[scores={rw2a.GetRidOfEm=1..}] run scoreboard players reset @e[scores={rw2a.Temp=-2147483648..2147483647}] rw2a.Temp
+execute as @a[scores={rw2a.GetRidOfEm=1..}] run function rw2a:auxil/commands/get_rid_of_em
 scoreboard players set @a rw2a.GetRidOfEm 0
 
 #! TOREMOVE ^

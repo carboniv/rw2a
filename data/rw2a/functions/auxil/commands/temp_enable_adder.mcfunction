@@ -1,3 +1,4 @@
+say temp_enable_adder
 
 scoreboard players add $TempEnableAdder rw2a.Globals 0
 scoreboard players operation $temp rw2a.Globals = $TempEnableAdder rw2a.Globals
