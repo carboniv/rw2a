@@ -45,7 +45,6 @@ execute if score $TempEnableAdder rw2a.Globals matches 1 run scoreboard players 
 #
 #
 
-
 ## rw2a.TempEnableEverythingAdder
 scoreboard players enable @a rw2a.TempEnableEverythingAdder
 execute as @a[scores={rw2a.TempEnableEverythingAdder=1..}] if score $TempEnableEverythingAdder rw2a.Globals matches 0 run scoreboard players set $TempEnableEverythingAdder rw2a.Globals 1
@@ -53,6 +52,16 @@ execute as @a[scores={rw2a.TempEnableEverythingAdder=1..}] if score $TempEnableE
 scoreboard players set @a rw2a.TempEnableEverythingAdder 0
 
 execute if score $TempEnableEverythingAdder rw2a.Globals matches 1 run scoreboard players add @e rw2a.Dummy 1
+#
+#
+
+## rw2a.TempEnableSum
+scoreboard players enable @a rw2a.TempEnableSum
+execute as @a[scores={rw2a.TempEnableSum=1..}] if score $TempEnableSum rw2a.Globals matches 0 run scoreboard players set $TempEnableSum rw2a.Globals 1
+execute as @a[scores={rw2a.TempEnableSum=1..}] if score $TempEnableSum rw2a.Globals matches 1 run scoreboard players set $TempEnableSum rw2a.Globals 0
+scoreboard players set @a rw2a.TempEnableSum 0
+
+execute if score $TempEnableSum rw2a.Globals matches 1 run function rw2a:auxil/commands/temp_enable_sum
 #
 #
 

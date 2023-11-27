@@ -72,6 +72,9 @@ scoreboard players add $TempEnableAdder rw2a.Globals 0
 scoreboard objectives add rw2a.TempEnableEverythingAdder trigger
 scoreboard players add $TempEnableEverythingAdder rw2a.Globals 0
 
+scoreboard objectives add rw2a.TempEnableSum trigger
+scoreboard players add $TempEnableSum rw2a.Globals 0
+
 ## rw2a.PigOut
 scoreboard objectives add rw2a.PigOut trigger
 
