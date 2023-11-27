@@ -48,3 +48,34 @@ scoreboard objectives add rw2a.ClearAllies trigger
 scoreboard objectives add rw2a.AllowConsumable trigger
 scoreboard objectives add rw2a.ConsumableOff dummy
 scoreboard players add $change-to rw2a.ConsumableOff 0
+
+## rw2a.PullThatShitUpJamie
+scoreboard objectives add rw2a.PullThatShitUpJamie trigger
+scoreboard objectives add rw2a.Temp dummy
+
+
+
+
+#! TOREMOVE v
+
+## rw2a.TempAddEnts
+scoreboard objectives add rw2a.TempAddEnts trigger
+
+## rw2a.TempAddPilots
+scoreboard objectives add rw2a.TempAddPilots trigger
+
+## rw2a.TempEnableAdder
+scoreboard objectives add rw2a.TempEnableAdder trigger
+scoreboard players add $TempEnableAdder rw2a.Globals 0
+
+## rw2a.TempEnableEverythingAdder
+scoreboard objectives add rw2a.TempEnableEverythingAdder trigger
+scoreboard players add $TempEnableEverythingAdder rw2a.Globals 0
+
+## rw2a.PigOut
+scoreboard objectives add rw2a.PigOut trigger
+
+## rw2a.GetRidOfEm
+scoreboard objectives add rw2a.GetRidOfEm trigger
+
+#! TOREMOVE ^
