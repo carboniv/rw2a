@@ -1,0 +1,135 @@
+
+
+main stuff
+
+individual race goes in their folder
+    they got their load fx
+    they got their tick fx
+    add'm to mimecraft load n tick
+
+    inside their folder they also got their mc funkin files
+
+just going with a tag system, fvck it
+
+advancements...
+
+
+race design heavy
+    passive
+    command
+    food
+    biome
+    debuff
+    cripple
+
+race design lite
+    passive buff (1-2 effects): related to biome, block, held item, environment
+    consumable: most non-rightclick minecraft items or normal consumable, should synergize with their buff's sources
+    debuff (1-2 sources): some weakness that not only "balances" but encourages players to make their home in different environments
+
+races
+    angel
+        # permanent elytra + jump
+        # purge debuffs, instant heal themselves and someone else
+        # fire weakness, nether weakness
+
+    beast
+        #
+        #
+        #
+
+    blank
+        transient soul: 
+        fresh blood: beetroot soup purges debuffs
+        no debuff?
+    
+    elven
+        #
+        #
+        #
+
+    fiend
+    #
+    #
+    #
+
+    forged
+        passive: iron armor provides fire immunity and bonus armor
+        consumable: iron ingot - resistance I 2 min, repair iron tools, heal
+        debuff: water extremely slows
+    
+    gazer
+        # looking at something
+        # 
+        #
+
+    giant
+        #
+        #
+        #
+
+    goopy
+        #
+        #
+        #
+    
+    human
+        # farming
+        # morale
+        # no debuff
+
+    hooved
+        #
+        #
+        #
+
+    hybrid
+        #
+        #
+        #
+
+    katin: arthropod like creatures
+        #
+        #
+        #
+
+    primor: starborn
+
+    reborn
+        #
+        #
+        #
+
+    scaled
+        #
+        #
+        #
+
+    shade
+        shadow armor: under darkness, -3 damage from all sources, regen on hit 
+        coalcaine: strength 1, speed 2, nightvision for 2 minutes
+        hard light: under light +3 damage from all sources (except fire and lava)
+
+    squat
+        #
+        #
+        #
+
+    strider (temp) fire elemental
+    # fire + lava immunity
+    # blaze rods
+    # water damage, rain slow
+
+    winged
+        # flight
+        #
+        # weak
+
+    zorca
+        aquatic: conduit power, regen in water
+        fish food: speed I, Dolphin's Grace for 2 minutes
+        dry skin: weakness I, Bad Luck I, +3 damage form all sources
+
+INCLUDE
+    JOIN race
+    LEAVE race 

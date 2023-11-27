@@ -1,0 +1,8 @@
+{
+    "condition": "minecraft:entity_scores",
+    "entity": "this",
+    "scores": {
+      "rw2a.This": 1
+    }
+  }
+  

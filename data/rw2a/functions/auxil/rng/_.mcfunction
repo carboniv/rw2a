@@ -1,0 +1,1 @@
+execute store result score $rng rw2a.Globals run loot spawn ~ ~ ~ loot rw2a:rng

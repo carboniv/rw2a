@@ -1,0 +1,43 @@
+STATS BABY
+	scoreboard objectives add <name> custom:<some stat>
+	find what the stat is! it au
+
+teams
+	/teammsg
+	
+	ADDTEAM
+	
+	/team add <teamname> "RealTeamName"
+	
+	JOINTEAM
+	
+	/team join <teammnamte> <player_name>
+	
+	MODITEAM
+	/team modify <teamname> (option) <value>
+		color
+		friendlyfire
+		prefix -- goes after teamname for some reason
+		suffix -- right after name
+		displayname
+
+PREDICATES HOLY SHIT
+
+scoreboards
+	make SURE to prefix scoreboards with
+		# ! \ <> or any character that a mcplayer cannot have
+
+other files
+	function datapack:folder/function
+
+misc
+	If you are working with datapacks you can(as far as i know) put all blocks that wont kill you 
+	in a group with the same tag and then test with execute if block #tagname. Similar to #wool 
+	for all wool colors or #log for all log types... idk i havent worked with that so far, but i 
+	know that you can do it somehow
+
+	https://gaming.stackexchange.com/questions/352097/how-to-make-players-deal-more-damage-at-night
+
+	https://gaming.stackexchange.com/questions/399348/how-can-i-increase-the-damage-a-mob-does-in-minecraft-bedrock
+
+	https://gist.github.com/Dinnerbone/7370a2846953eee2d8fc64514fb76de8

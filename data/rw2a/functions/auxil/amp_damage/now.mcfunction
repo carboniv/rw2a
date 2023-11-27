@@ -1,0 +1,1 @@
+scoreboard players operation @s rw2a.AmpDamageCooldown = $time rw2a.Globals

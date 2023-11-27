@@ -1,0 +1,23 @@
+say Xxx loading...
+team add xxxxx "§?Xxx"
+team modify xxxxx prefix {"text":"[Xxx] ","color":"grey"}
+
+
+
+#### Passive 1-2
+
+
+#### Consumable 1-2-3
+
+
+## Secondary Effect
+
+
+#### Debuff 1-2-3
+
+
+### Block nullify 1-2-3
+
+
+
+say Xxx loaded.

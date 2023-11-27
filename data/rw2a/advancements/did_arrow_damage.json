@@ -1,0 +1,20 @@
+{
+    "criteria": {
+        "example": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "damage": {
+                    "type": {
+                        "direct_entity": {
+                            "type": "arrow"
+                        }
+                    }
+                }
+            }
+            
+        }
+    },
+    "rewards": {
+        "function": "rw2a:auxil/fx/did_arrow_damage"
+    }
+}

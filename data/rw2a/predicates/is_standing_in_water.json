@@ -1,0 +1,13 @@
+{
+    "condition": "minecraft:location_check",
+    "offsetY": -1,
+    "predicate": {
+      "block": {
+        "blocks": [
+          "minecraft:water",
+          "minecraft:water_cauldron"
+        ]
+      }
+    }
+  }
+  

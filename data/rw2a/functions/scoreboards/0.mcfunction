@@ -1,0 +1,2 @@
+function rw2a:scoreboards/globals
+function rw2a:scoreboards/scoreboards1

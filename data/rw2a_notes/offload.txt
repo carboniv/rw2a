@@ -1,0 +1,234 @@
+# #### STAT TRACKERS ####
+scoreboard objectives add fall stat.fallOnecm
+scoreboard objectives add damage stat.damageTaken
+
+
+execute as @s[tag=!holding_charcoal,nbt={SelectedItem:{id:"minecraft:charcoal"}}] run function rw2a:auxil/click_detect2/tag_add_holding_use_item
+execute as @s[tag=holding_charcoal,nbt=!{SelectedItem:{id:"minecraft:charcoal"}}] run tag @s remove holding_charcoal
+
+execute as @s[tag=!holding_coal,nbt={SelectedItem:{id:"minecraft:coal"}}] run tag @s add holding_coal
+execute as @s[tag=holding_coal,nbt=!{SelectedItem:{id:"minecraft:coal"}}] run tag @s remove holding_coal
+
+execute as @s[tag=holding_charcoal] run function rw2a:races/shade/tick_hold_use_item
+execute as @s[tag=holding_coal] run function rw2a:races/shade/tick_hold_use_item
+
+execute as @s[tag=holding_charcoal,tag=!]
+
+
+
+
+#execute at @s[scores={CoalcaineRaycastDist=..9}] positioned ~ ~1.5 ~ positioned ^ ^ ^2.2 unless entity @e[tag=!us,distance=1] run function rw2a:races/shade/raycast_coalcaine_wither
+#execute at @s positioned ~ ~1.5 ~ positioned ^ ^ ^2.2 if block ~ ~ ~ air unless entity @e[tag=!us,distance=..0.75,type=!item] run function rw2a:races/shade/raycast_coalcaine_wither
+#execute at @s run tag @e[tag=!us,sort=nearest,limit=1] add targeted
+#tag @e[tag=!us,distance=..0.75,type=!item] add targeted
+
+#execute as @s[scores={CoalcaineRaycastDist=10..}] run function rw2a:races/shade/raycast_target_creature
+
+
+#particle minecraft:block_marker iron_bars ~ ~1 ~ 0 0 0 1 1 force
+#execute anchored eyes if block ~ ~ ~ air positioned ~ ~-1.35 ~ unless entity @e[tag=!us,distance=..0.75,type=!armor_stand,type=!item,type=!item_frame,type=!glow_item_frame,type=!experience_orb] positioned ^ ^ ^0.3 positioned ~ ~1.35 ~ as @e[tag=!us,distance=..0.75,type=!armor_stand,type=!item,type=!item_frame,type=!glow_item_frame,type=!experience_orb] run function rw2a:races/shade/sub_raycast_coalcaine
+
+#execute unless entity @e[tag=!us,distance=..0.75,type=!armor_stand,type=!item,type=!item_frame,type=!glow_item_frame,type=!experience_orb] as @e[tag=!us,distance=..1,limit=1] run say done?
+#execute at @e[tag=us] as @e[tag=!us,sort=nearest] run say boom?
+
+#execute if entity @e[tag=!us,distance=..0.75,type=!armor_stand,type=!item,type=!item_frame,type=!glow_item_frame,type=!experience_orb] run effect give @s minecraft:glowing 5 1 true
+
+#execute as @e[tag=!us,distance=..0.75,type=!armor_stand,type=!item,type=!item_frame,type=!glow_item_frame,type=!experience_orb] as @s run say boom?
+
+
+-----
+
+
+
+execute store result score @s CoalcaineBuffNow run time query gametime
+scoreboard players operation @s CoalcaineBuffNow -= @s CoalcaineBuffOld
+
+scoreboard players set @s CoalcaineRaycastDist 0
+tag @s add us
+#execute as @s[scores={CoalcaineBuffNow=..2400}] at @s anchored eyes run function rw2a:races/shade/raycast_coalcaine_wither
+execute as @s at @s anchored eyes run function rw2a:races/shade/raycast_coalcaine_wither
+#execute as @a[tag=Looking] at @s positioned ~ ~1.6 ~ positioned ^ ^ ^-1 facing entity @e[name=Target] eyes positioned ^ ^ ^1 positioned ~ ~-1.6 ~ if entity @s[distance=..0.1] at @s run <command>
+tag @s remove us
+tag @a remove targeted
+
+
+-------
+
+
+scoreboard players add @s CoalcaineRaycastDist 1
+#tellraw @s {"text":"","extra":[{"selector":"@s"},{"text":"ballnut"}]}
+
+particle crit ~ ~1 ~ 0 0 0 0 1 force
+
+execute positioned ^ ^ ^1 run function rw2a:races/shade/raycast_coalcaine_wither
+
+#execute as @s[scores={CoalcaineRaycastDist=..25}] positioned ^ ^ ^.2 unless entity @e[tag=!us,dx=1,dy=1,dz=1] run function rw2a:races/shade/raycast_coalcaine_wither
+#execute as @s if entity @e[tag=!us,dx=1,dy=1,dz=1] run execute as @e[tag=!us,dx=1,dy=1,dz=1,sort=nearest,limit=1,type=!item,type=!experience_orb] run say oh my god
+#xecute as @s[scores={CoalcaineRaycastDist=11..}] unless entity @e[tag=!us,type=!item,type=!experience_orb,dx=0] run say nothing
+
+------
+
+execute as @e[predicate=other:update_nametag] run item modify entity @s weapon.mainhand other:mob_health
+
+execute as @e[predicate=other:update_nametag] run data modify entity @s CustomName set from entity @s HandItems[0].tag.display.Lore[0]
+
+----
+
+/data modify entity @e[type=minecraft:ender_pearl,limit=1,sort=nearest] Owner set from entity @e[type=minecraft:mooshroom,limit=1,sort=nearest] UUID
+
+---
+
+execute as @e[nbt={custom_potion_effects:[1]}] run say shot??
+tag @e[nbt={active_effects:[{id:"minecraft:unluck"}]}] add just_shot_by_arrow
+execute as @e[tag=just_shot_by_arrow] run effect clear @s unluck
+
+execute as @e[tag=just_shot_by_arrow] run say arrowed
+
+execute as @e[type=arrow,tag=!affected_arrow] run data merge entity @s {Color:8008135,custom_potion_effects:[{amplifier:1,duration:1}]}
+#execute as @e run data modify entity @e[limit=1] Owner set from entity @p UUID
+tag @e[type=arrow,tag=!affected_arrow] add affected_arrow
+
+tag @e[tag=just_shot_by_arrow] remove just_shot_by_arrow
+
+#say record arrow pos
+
+execute store result entity @s Pos[0] double 1 run scoreboard players get $x ArrowLocation
+execute store result entity @s Pos[1] double 1 run scoreboard players get $y ArrowLocation
+execute store result entity @s Pos[2] double 1 run scoreboard players get $z ArrowLocation
+
+execute at @s as @e[type=!arrow,distance=..1,limit=1] run say owner
+
+-------
+
+{
+    "condition": "minecraft:entity_scores",
+    "entity": "this",
+    "scores": {
+      "rw2a.This": 1
+    }
+  }
+  
+--------
+
+# Left click detection
+execute as @e[scores={rw2a.DetectUseIntFollowerID=1..}] on attacker run scoreboard players add @s rw2a.LeftClick 1
+execute as @e[scores={rw2a.DetectUseIntFollowerID=1..}] at @s if entity @a[scores={rw2a.LeftClick=1..},distance=..10] run kill @s
+
+execute as @a[scores={rw2a.LeftClick=1..}] at @s run say LEFT CLICK
+scoreboard players set @a[scores={rw2a.DetectUseIntOwnerID=1..}] rw2a.LeftClick 0
+
+# Right click detection
+execute as @e[scores={rw2a.DetectUseIntFollowerID=1..}] on target run scoreboard players add @s rw2a.RightClick 1
+execute as @e[scores={rw2a.DetectUseIntFollowerID=1..}] at @s if entity @a[scores={rw2a.RightClick=1..},distance=..10] run kill @s
+
+execute as @a[scores={rw2a.RightClick=1..}] at @s run say RIGHT CLICK
+scoreboard players set @a[scores={rw2a.DetectUseIntOwnerID=1..}] rw2a.RightClick 0
+
+---------
+
+execute as @e[distance=..2147483647] run say set @s rw2a.RaycastTarget 69
+scoreboard players add @e[distance=..2147483647] rw2a.RaycastTarget 69
+
+execute as @e[scores={rw2a.RaycastTarget=-2147483648..-2,0..2147483647}] positioned ~-0.99 ~-0.99 ~-0.99 if entity @s[dx=0] positioned ~0.99 ~0.99 ~0.99 run function rw2a:auxil/raycast/collide
+execute as @e[scores={rw2a.RaycastTarget=-2147483648..-2,0..2147483647}] run say IHIHIHIIHHI
+
+say add @s RaycastIterations 1
+scoreboard players add @s RaycastIterations 1
+execute if score @s rw2a.RaycastIterations < $max rw2a.RaycastIterations run say casting...
+execute if score @s rw2a.RaycastIterations < $max rw2a.RaycastIterations positioned ^ ^ ^1 run function rw2a:auxil/raycast/raycast
+
+------
+
+
+scoreboard players set $temp rw2a.Globals 10
+scoreboard players operation $10t rw2a.Globals = $time rw2a.Globals
+scoreboard players operation $10t rw2a.Globals %= $temp rw2a.Globals
+
+scoreboard players set $temp rw2a.Globals 20
+scoreboard players operation $20t rw2a.Globals = $time rw2a.Globals
+scoreboard players operation $20t rw2a.Globals %= $temp rw2a.Globals
+
+scoreboard players set $temp rw2a.Globals 60
+scoreboard players operation $60t rw2a.Globals = $time rw2a.Globals
+scoreboard players operation $60t rw2a.Globals %= $temp rw2a.Globals
+
+-----
+
+execute as @s at @s run function rw2a:auxil/raycast/_
+
+#us
+#them
+
+scoreboard players set @s[scores={rw2a.AllyPointer=32..}] rw2a.AllyPointer 0
+scoreboard players operation @s[scores={rw2a.AllyPointer=0}] rw2a.Ally0 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=1}] rw2a.Ally1 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=2}] rw2a.Ally2 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=3}] rw2a.Ally3 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=4}] rw2a.Ally4 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=5}] rw2a.Ally5 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=6}] rw2a.Ally6 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=7}] rw2a.Ally7 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=8}] rw2a.Ally8 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=9}] rw2a.Ally9 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=10}] rw2a.Ally10 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=11}] rw2a.Ally11 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=12}] rw2a.Ally12 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=13}] rw2a.Ally13 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=14}] rw2a.Ally14 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=15}] rw2a.Ally15 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=16}] rw2a.Ally16 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=17}] rw2a.Ally17 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=18}] rw2a.Ally18 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=19}] rw2a.Ally19 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=20}] rw2a.Ally20 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=21}] rw2a.Ally21 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=22}] rw2a.Ally22 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=23}] rw2a.Ally23 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=24}] rw2a.Ally24 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=25}] rw2a.Ally25 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=26}] rw2a.Ally26 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=27}] rw2a.Ally27 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=28}] rw2a.Ally28 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=29}] rw2a.Ally29 = @e[scores={rw2a.Return=1}] MXID
+scoreboard players operation @s[scores={rw2a.AllyPointer=30}] rw2a.Ally30 = @e[scores={rw2a.Return=1}] MXID
+
+scoreboard players add @s rw2a.AllyPointer 1
+
+#execute store result block <chest coords> Items[0].tag.test int 1.0 run scoreboard players get @p test
+
+-----
+
+function rw2a:clean/return
+
+execute if score @s MXID = $temp rw2a.Ally0 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally1 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally2 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally3 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally4 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally5 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally6 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally7 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally8 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally9 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally10 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally11 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally12 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally13 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally14 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally15 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally16 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally17 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally18 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally19 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally20 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally21 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally22 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally23 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally24 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally25 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally26 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally27 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally28 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally29 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally30 run function rw2a:set/return
+execute if score @s MXID = $temp rw2a.Ally31 run function rw2a:set/return

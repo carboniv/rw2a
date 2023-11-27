@@ -1,0 +1,25 @@
+execute as @p[] at @s if block ~ ~-1 ~ grass_block run tag @s add on_grass
+execute as @p[] at @s unless block ~ ~-1 ~ grass_block run tag @s remove on_grass
+# SAND #
+execute as @p[] at @s if block ~ ~-1 ~ sand run tag @s add on_sand
+execute as @p[] at @s unless block ~ ~-1 ~ sand run tag @s remove on_sand
+# MAGMA #
+execute as @p[] at @s if block ~ ~-1 ~ magma_block run tag @s add on_magma
+execute as @p[] at @s unless block ~ ~-1 ~ magma_block run tag @s remove on_magma
+# SAND #
+execute as @p[] at @s if block ~ ~-1 ~ sand run tag @s add on_sand
+execute as @p[] at @s unless block ~ ~-1 ~ sand run tag @s remove on_sand
+# NETHERRACK #
+execute as @p[] at @s if block ~ ~-1 ~ netherrack run tag @s add on_netherrack
+execute as @p[] at @s unless block ~ ~-1 ~ netherrack run tag @s remove on_netherrack
+# MYCELIUM #
+execute as @p[] at @s if block ~ ~-1 ~ mycelium run tag @s add on_mycelium
+execute as @p[] at @s unless block ~ ~-1 ~ mycelium run tag @s remove on_mycelium
+### IN BLOCKS ###
+## players ##
+# WATER #
+execute as @p[] at @s if block ~ ~ ~ water run tag @s add in_water
+execute as @p[] at @s unless block ~ ~ ~ water run tag @s remove in_water
+# LAVA #
+execute as @p[] at @s if block ~ ~ ~ lava run tag @s add in_lava
+execute as @p[] at @s unless block ~ ~ ~ lava run tag @s remove in_lava

@@ -1,0 +1,45 @@
+{
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:location_check",
+        "offsetY": 1,
+        "predicate": {
+          "block": {
+            "blocks": [
+              "minecraft:lava",
+              "minecraft:fire",
+              "minecraft:soul_fire"
+            ]
+          }
+        }
+      },
+      {
+        "condition": "minecraft:location_check",
+        "offsetY": -1,
+        "predicate": {
+          "block": {
+            "blocks": [
+              "minecraft:magma_block"
+            ]
+          }
+        }
+      },
+      {
+        "condition": "minecraft:location_check",
+        "predicate": {
+          "block": {
+            "blocks": [
+              "minecraft:lava",
+              "minecraft:lava_cauldron",
+              "minecraft:campfire",
+              "minecraft:fire",
+              "minecraft:soul_campfire",
+              "minecraft:soul_fire"
+            ]
+          }
+        }
+      }
+    ]
+  }
+  
