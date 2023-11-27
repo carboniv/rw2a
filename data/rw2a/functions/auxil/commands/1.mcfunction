@@ -33,7 +33,7 @@ scoreboard players set @a rw2a.TempAddEnts 0
 
 ## rw2a.TempAddPilots
 scoreboard players enable @a rw2a.TempAddPilots
-execute as @a[scores={rw2a.TempAddPilots=1..}] run scoreboard players add @e[type=#rw2a:not_piloted] rw2a.Temp 1
+execute as @a[scores={rw2a.TempAddPilots=1..}] run scoreboard players add @e[type=!#rw2a:not_piloted] rw2a.Temp 1
 scoreboard players set @a rw2a.TempAddPilots 0
 
 ## rw2a.TempEnableAdder
