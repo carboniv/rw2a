@@ -1,5 +1,5 @@
 #say I've been oof'd 
-particle explosion ~ ~ ~ 0 0 0 0 1
+#particle explosion ~ ~ ~ 0 0 0 0 1
 
 ### Return
 scoreboard players set @s rw2a.Return 1

@@ -53,8 +53,14 @@ scoreboard players add $change-to rw2a.ConsumableOff 0
 #
 #
 
-## rw2a.rw2a.DisplayGlobals
+#! DEBUG v
+
+## rw2a.DisplayGlobals
 scoreboard objectives add rw2a.DisplayGlobals trigger
+
+## rw2a.Reload
+scoreboard objectives add rw2a.Reload trigger
+
 
 #
 #

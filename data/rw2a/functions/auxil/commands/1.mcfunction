@@ -23,13 +23,18 @@ scoreboard players set @a rw2a.AllowConsumable 0
 #
 #
 
-#! TESTING v
+#! DEBUG v
 
 ## rw2a.DisplayGlobals
-scoreboard players add @a[scores={rw2a.DisplayGlobals=0..}] rw2a.DisplayGlobals 0
 scoreboard players enable @a rw2a.DisplayGlobals
 execute as @a[scores={rw2a.DisplayGlobals=1..}] run scoreboard objectives setdisplay sidebar rw2a.Globals
 scoreboard players set @a rw2a.DisplayGlobals 0
+
+## rw2a.Reload
+scoreboard players enable @a rw2a.Reload
+execute as @a[scores={rw2a.Reload=1..}] run function rw2a:auxil/commands/reload
+scoreboard players set @a rw2a.Reload 0
+
 
 #! TOREMOVE v
 

@@ -3,7 +3,7 @@
 function rw2a:clean/return
 
 tag @e[scores={rw2a.RaycastTarget=1..}] remove rw2a.RaycastTarget
-tag @e[scores={rw2a.RaycastTarget=-1}] remove rw2a.raycast_origin
+tag @e[scores={rw2a.RaycastTarget=-1}] remove rw2a.RaycastOrigin
 
 #say resetting rw2a.RaycastTarget...
 #say reset @e[scores={rw2a.RaycastTarget=-2147483648..2147483647}] rw2a.RaycastTarget
