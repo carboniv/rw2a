@@ -1,0 +1,74 @@
+
+## FX
+
+## FX.TESTING
+
+scoreboard objectives add __Testing dummy
+
+scoreboard objectives add __NBT.HurtTime.Check-Time dummy
+
+scoreboard objectives add __Testing.Health dummy
+scoreboard objectives add __Testing.Absorbtion dummy
+scoreboard objectives add __Testing.Vigor dummy
+scoreboard objectives add __Testing.Vigor-Last dummy
+scoreboard objectives add __Testing.HealthPriorTotal dummy
+
+scoreboard objectives add __Testing.DamageTaken dummy
+scoreboard objectives add __Testing.DamageTaken-Total dummy
+scoreboard objectives add __Testing.DamageInstances-ForPrior dummy
+
+#
+##
+#
+
+scoreboard objectives add __Testing.HealthNow dummy
+scoreboard objectives add __Testing.AbsorbtionNow dummy
+scoreboard objectives add __Testing.VigorNow dummy
+
+scoreboard objectives add __Testing.HealthNow-Last dummy
+scoreboard objectives add __Testing.AbsorbtionNow-Last dummy
+scoreboard objectives add __Testing.VigorNow-Last dummy
+
+scoreboard objectives add __Testing.HealthNow-Delta dummy
+scoreboard objectives add __Testing.AbsorbtionNow-Delta dummy
+scoreboard objectives add __Testing.VigorNow-Delta dummy
+
+----------
+
+#say __/_
+
+#
+##
+###
+##
+#
+
+function rw2a:__/debug/_
+
+#
+##
+###
+##
+#
+
+
+
+
+execute as @e[type=!#rw2a:not_piloted] run function rw2a:__/fx/_s/nnp/_
+
+#
+##
+###
+##
+#
+
+## DETECTION
+
+#
+### DETECTION.CLICK
+
+execute as @a[tag=__DetectionClick-begin] at @s run function rw2a:__/mo/detection.click/_s/_0
+execute as @a[tag=__DetectionClick-Owner] at @s run function rw2a:__/mo/detection.click/_s/_2
+execute as @a[tag=__DetectionClick-cease] at @s run function rw2a:__/mo/detection.click/_s/_3
+
+execute as @e[type=interaction,tag=__DetectionClick-Slave] at @s run function rw2a:__/mo/detection.click/_s/_4

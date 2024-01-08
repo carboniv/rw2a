@@ -1,0 +1,1 @@
+scoreboard players set $cont _.Raycast 0

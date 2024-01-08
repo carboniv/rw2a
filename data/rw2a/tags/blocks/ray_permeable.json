@@ -1,8 +1,6 @@
 {
     "values": [
-      "minecraft:air",
-      "minecraft:cave_air",
-      "minecraft:void_air",
+      "#rw2a:air",
       "minecraft:acacia_sapling",
       "minecraft:allium",
       "minecraft:azure_bluet",
@@ -36,7 +34,8 @@
       "minecraft:fire",
       "minecraft:fire_coral",
       "minecraft:fire_coral_fan",
-      "minecraft:grass",
+      "minecraft:short_grass",
+      "minecraft:tall_grass",
       "minecraft:horn_coral",
       "minecraft:horn_coral_fan",
       "minecraft:jungle_sapling",

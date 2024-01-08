@@ -1,0 +1,34 @@
+
+#\
+execute as @s[predicate=rw2a:was_hurt] run say # execute as @s[predicate=rw2a:was_hurt] run say 
+#/
+
+execute as @s[predicate=rw2a:was_hurt] run tag @s add __damage.taken
+
+#
+##
+#
+
+#
+### SCORES.RECORDS
+
+tag @s[type=player] add Records
+execute at @s[tag=Records] as @e[distance=..31,type=!#rw2a:not_piloted,tag=!Records] run tag @s add Records
+execute as @s[tag=Records] run function rw2a:__/mo/scores.records.attributes/_s/_
+execute as @s[tag=Records] run function rw2a:__/mo/scores.records.manual/_s/_
+
+#
+##
+###
+##
+#
+
+#* PRIORITY 1
+
+#
+### DAMAGE.TAKEN
+
+#\
+execute as @s[tag=__damage.taken] run say # execute as @s[tag=__damage.taken] run 
+#/
+execute as @s[tag=__damage.taken,scores={__Damage.Ignore=0}] run function rw2a:__/mo/damage.taken/_s/_

@@ -1,1 +1,0 @@
-execute as @s[scores={rw2a.ConsumableOff=0},tag=rw2a.has_int_follower] run function rw2a:auxil/detect_use_item/unequipping

@@ -1,6 +1,6 @@
 # #### STAT TRACKERS ####
 scoreboard objectives add fall stat.fallOnecm
-scoreboard objectives add damage stat.damageTaken
+scoreboard objectives add damage stat.DamageTaken
 
 
 execute as @s[tag=!holding_charcoal,nbt={SelectedItem:{id:"minecraft:charcoal"}}] run function rw2a:auxil/click_detect2/tag_add_holding_use_item
@@ -141,15 +141,15 @@ execute if score @s rw2a.RaycastIterations < $max rw2a.RaycastIterations positio
 
 
 scoreboard players set $temp rw2a.Globals 10
-scoreboard players operation $10t rw2a.Globals = $time rw2a.Globals
+scoreboard players operation $10t rw2a.Globals = %time rw2a.Globals
 scoreboard players operation $10t rw2a.Globals %= $temp rw2a.Globals
 
 scoreboard players set $temp rw2a.Globals 20
-scoreboard players operation $20t rw2a.Globals = $time rw2a.Globals
+scoreboard players operation $20t rw2a.Globals = %time rw2a.Globals
 scoreboard players operation $20t rw2a.Globals %= $temp rw2a.Globals
 
 scoreboard players set $temp rw2a.Globals 60
-scoreboard players operation $60t rw2a.Globals = $time rw2a.Globals
+scoreboard players operation $60t rw2a.Globals = %time rw2a.Globals
 scoreboard players operation $60t rw2a.Globals %= $temp rw2a.Globals
 
 -----

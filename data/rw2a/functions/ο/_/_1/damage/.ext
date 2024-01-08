@@ -1,0 +1,4 @@
+
+scoreboard players set @s __IgnoreDamage 1
+damage @s 1 rw2a:raw
+schedule function A

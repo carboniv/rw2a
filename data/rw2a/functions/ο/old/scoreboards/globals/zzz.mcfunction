@@ -1,0 +1,1 @@
+scoreboard objectives remove rw2a.Globals

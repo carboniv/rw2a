@@ -1,0 +1,1 @@
+tag @e[tag=__return] remove __return

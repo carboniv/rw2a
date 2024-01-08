@@ -15,6 +15,6 @@
         }
     },
     "rewards": {
-        "function": "rw2a:auxil/fx/did_arrow_damage"
+        "function": "rw2a:auxil/arrow_detect/_"
     }
 }

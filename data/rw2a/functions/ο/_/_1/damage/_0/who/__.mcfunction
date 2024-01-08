@@ -1,0 +1,1 @@
+execute as @e[predicate=rw2a:was_hurt] run function rw2a:_/_1/damage/_0/who/_s/__/_0

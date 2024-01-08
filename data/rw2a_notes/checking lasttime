@@ -1,8 +1,0 @@
-
-## NOW
-execute store result score @s amp_time run time query gametime
-## difference
-scoreboard players operation @s amp_time -= @s last_amp_time
-## condition
-execute as @s[scores={amp_time=10..}] run say HURT ME
-#

@@ -1,0 +1,24 @@
+execute as @e[tag=mob_that_looks_for_player] on target if entity @s[tag=player_to_be_found] run ...
+
+https://www.reddit.com/r/MinecraftCommands/comments/1899hub/relative_entity_teleportation_with_scoreboard/
+GalSergey
+•
+21 days ago
+You can use macros in datapack to insert any value into any part of the command (1.20.2+).
+
+For example:
+
+# Setup
+data modify storage example:macro tp.distance set value 2.5d
+
+# function example:macro/tp
+$tp @s ^ ^ ^$(distance)
+
+# In chat
+function example:macro/tp with storage example:macro tp
+So, by run this command in the chat you will teleport yourself as many blocks forward as set in storage example:macro tp.distance
+
+----
+
+/advancement revoke @s from minecraft:recipes/root
+However, I recommend you remove all recipes using /recipe take @s *

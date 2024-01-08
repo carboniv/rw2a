@@ -1,0 +1,1 @@
+function rw2a:__/mxid/_s/store/_0

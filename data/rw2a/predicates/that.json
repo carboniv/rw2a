@@ -12,7 +12,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "nbt": "{Tags:[\"rw2a.that\"]}"
+          "nbt": "{Tags:[\"rw2a.That\"]}"
         }
       }
     ]

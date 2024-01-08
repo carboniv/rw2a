@@ -1,0 +1,11 @@
+{
+	"condition": "minecraft:entity_scores",
+	"entity": "this",
+	"scores": {
+	  ".DamageTaken": {
+		"min": 0,
+		"max": 2
+	  }
+	}
+  }
+  

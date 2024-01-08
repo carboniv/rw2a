@@ -1,0 +1,1 @@
+#particle <name> <pos> <delta> <speed> <count> [force|normal] [<viewers>]

@@ -1,0 +1,8 @@
+{
+    "message_id": "quash",
+    "exhaustion": 0,
+    "scaling": "never",
+    "effects": "poking",
+    "death_message_type": "default"
+  }
+  

@@ -1,0 +1,1 @@
+function rw2a:_/_1/scoreboards/id/mxid/1

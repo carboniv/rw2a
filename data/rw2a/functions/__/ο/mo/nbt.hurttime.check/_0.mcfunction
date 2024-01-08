@@ -1,0 +1,1 @@
+say nbt.hurttime.check/_0

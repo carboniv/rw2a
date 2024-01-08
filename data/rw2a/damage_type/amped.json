@@ -1,6 +1,7 @@
 {
-  "message_id": "vulnerability",
+  "message_id": "amped",
   "exhaustion": 0,
   "scaling": "never",
-  "effects": "poking"
+  "effects": "poking",
+  "death_message_type": "default"
 }

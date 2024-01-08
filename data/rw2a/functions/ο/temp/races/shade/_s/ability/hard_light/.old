@@ -1,0 +1,45 @@
+#say ability_hard_light
+
+#execute unless entity @s[scores={rw2a.DamageTotal=..10},predicate=rw2a:is_entity_on_fire,predicate=!rw2a:is_block_magma] run say A
+#execute unless entity @s[scores={rw2a.RawDamageTaken=11..40},predicate=rw2a:is_in_lava] run say B
+#execute unless entity @s[scores={rw2a.AmpDamageCooldown=..20},predicate=rw2a:is_block_of_soulfire] run say C
+
+#execute unless entity @s[scores={rw2a.DamageTotal=..10},predicate=rw2a:is_entity_on_fire,predicate=!rw2a:is_block_magma] unless entity @s[scores={rw2a.RawDamageTaken=11..40},predicate=rw2a:is_in_lava] unless entity @s[scores={rw2a.AmpDamageCooldown=..20},predicate=rw2a:is_block_of_soulfire] run say D
+
+#unless entity @s[scores={rw2a.DamageTotal=..10},predicate=rw2a:is_entity_on_fire] unless entity @s[scores={rw2a.DamageTotal=..10},predicate=rw2a:is_block_magma] unless entity @s[scores={rw2a.RawDamageTaken=11..40},predicate=rw2a:is_in_lava] unless entity @s[scores={rw2a.RawDamageTaken=..20},predicate=rw2a:is_block_of_soulfire] unless entity @s[scores={rw2a.RawDamageTaken=..20},nbt={Air:0s}]
+
+## AMP
+#execute unless entity @s[scores={rw2a.DamageTotal=..10},predicate=rw2a:is_entity_on_fire,predicate=!rw2a:is_block_magma] unless entity @s[scores={rw2a.RawDamageTaken=11..40},predicate=rw2a:is_in_lava] unless entity @s[scores={rw2a.AmpDamageCooldown=..20},predicate=rw2a:is_block_of_soulfire] run function rw2a:auxil/amp_damage/add_mild
+
+### black is whole
+#execute as @s[predicate=rw2a:was_hurt] run say 01
+#execute as @s[scores={rw2a.DamageTotal=1..}] run say A4
+#execute as @s[predicate=rw2a:was_hurt,predicate=!rw2a:is_block_shady] run say B
+#execute as @s[predicate=rw2a:was_hurt,predicate=rw2a:is_bright] run say C
+
+
+function rw2a:_/marker/_s/set/this
+
+execute on attacker run function rw2a:_/marker/_s/set/that
+execute on attacker run scoreboard players add @s .Dummy 1
+
+execute if entity @e[scores={rw2a.That=1}] as @e[scores={rw2a.This=1}] run say attacked by entity @e[scores={rw2a.That=1}]
+execute unless entity @e[scores={rw2a.That=1}] as @e[scores={rw2a.This=1}] run say environment damage
+
+function rw2a:_/marker/clean/that
+function rw2a:_/marker/clean/this
+
+0000
+
+function rw2a:_/marker/_s/set/this
+execute on attacker run function rw2a:_/marker/_s/add/attacker
+execute if entity @e[scores={rw2a.Attacker=1},tag=!rw2a.This] run say has attacker @e[scores={rw2a.Attacker=1}]
+execute if entity @e[scores={rw2a.Attacker=1},tag=rw2a.This] run say no attacker (us proxy)
+execute unless entity @e[scores={rw2a.Attacker=1}] run say no attacker (default)
+function rw2a:_/marker/clean/attacker
+function rw2a:_/marker/clean/this
+
+
+execute on attacker run say >>>>>>>>>>
+execute on attacker on target run say XXXXXXXX
+execute unless entity @e[tag=rw2a.hard_light-1-attacker] run say <<<<<<<<<<

@@ -1,6 +1,8 @@
 {
     "replace": false,
     "values": [
-        "rw2a:main/load"
+		"rw2a:zzz",
+		"rw2a:-",
+        "rw2a:0"
     ]
 }

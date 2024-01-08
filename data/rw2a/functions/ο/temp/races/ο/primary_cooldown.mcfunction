@@ -1,0 +1,1 @@
+scoreboard players set @s rw2a.Race-PrimaryCooldown 0

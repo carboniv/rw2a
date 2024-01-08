@@ -1,0 +1,1 @@
+function rw2a:__/mxid/_s/get/marker/_0

@@ -1,0 +1,1 @@
+execute store result storage __:mxid this int 1 run scoreboard players get @s __MXID

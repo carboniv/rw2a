@@ -1,0 +1,8 @@
+{
+    "values": [
+        "rw2a:exact",
+		"rw2a:pure",
+		"rw2a:quash",
+        "rw2a:raw"
+    ]
+}

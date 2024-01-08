@@ -1,0 +1,18 @@
+
+				desc								armor	bypass_cooldown	effects		enchantments	no_impact	no_knockback 
+_vtypev_                                    
+amped			(bonus)											yes                                     	yes         yes
+
+
+bonus			basic extra dmg								yes											yes			yes
+exact           exact health						yes		yes				yes			yes				yes			yes
+
+
+mystical		pierces effects								yes				yes
+pure			pierces armor and enchants					yes							yes				yes			yes
+quash			pierces effects and enchantments			yes				yes			yes				yes			yes
+raw				pierces enchantments						yes							yes				yes			yes
+
+uniform																													
+
+vulnerability   (bonus)										yes											yes			yes

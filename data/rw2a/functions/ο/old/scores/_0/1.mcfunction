@@ -1,0 +1,1 @@
+function rw2a:scoreboards/scores/_0/damage/1

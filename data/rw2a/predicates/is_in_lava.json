@@ -3,6 +3,17 @@
   "terms": [
     {
       "condition": "minecraft:location_check",
+      "offsetY": 2,
+      "predicate": {
+        "block": {
+          "blocks": [
+            "minecraft:lava"
+          ]
+        }
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
       "offsetY": 1,
       "predicate": {
         "block": {
