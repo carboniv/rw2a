@@ -21,7 +21,11 @@ scoreboard players set @s[scores={__Records-Ignore=3..}] __Records-Ignore 0
 #
 
 #>> __hurt
-tag @s[scores={__Damage.Cooldown=0,__Records-Ignore=0},predicate=rw2a:was_hurt] add __hurt
+execute as @s[scores={__Damage.Cooldown=0,__Records-Ignore=0},predicate=rw2a:was_hurt] run function rw2a:__/fx/_s/-entity/-piloted/-hurt/_
+
+# # execute as @s[tag=__projectile-owner] run say __projectile-owner
+# execute as @s[tag=__projectile-damage] run say did projectile-damage!
+# execute as @s[tag=__melee-damage] run say did melee damage!
 
 #
 ##

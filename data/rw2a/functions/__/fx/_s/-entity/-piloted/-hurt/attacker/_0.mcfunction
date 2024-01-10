@@ -1,4 +1,4 @@
-# say I'm an attacker!
+say I'm an attacker!
 
 #>>
 tag @s add __attacker

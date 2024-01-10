@@ -36,14 +36,40 @@ scoreboard objectives add races.timers.SecondaryAux dummy
 scoreboard objectives add races.timers.Consumable dummy
 scoreboard objectives add races.timers.Digestion dummy
 
+#
+### FX.Ability-Profiency,Level,XP
+
+## TODO: implement leveling!
+
+scoreboard objectives add races.Ability0-Proficiency dummy
+scoreboard objectives add races.Ability0-XP dummy
+scoreboard objectives add races.Ability0-Level dummy
+#
+scoreboard objectives add races.Ability1-Proficiency dummy
+scoreboard objectives add races.Ability1-XP dummy
+scoreboard objectives add races.Ability1-Level dummy
+#
+scoreboard objectives add races.Ability2-Proficiency dummy
+scoreboard objectives add races.Ability2-XP dummy
+scoreboard objectives add races.Ability2-Level dummy
+#
+scoreboard objectives add races.Ability3-Proficiency dummy
+scoreboard objectives add races.Ability3-XP dummy
+scoreboard objectives add races.Ability3-Level dummy
+#
+scoreboard objectives add races.Ability4-Proficiency dummy
+scoreboard objectives add races.Ability4-XP dummy
+scoreboard objectives add races.Ability4-Level dummy
+#
+scoreboard objectives add races.Ability5-Proficiency dummy
+scoreboard objectives add races.Ability5-XP dummy
+scoreboard objectives add races.Ability5-Level dummy
+#
 
 ## RACES
 
 #
-###
-
-#
-### RACE.ALPHA
+### RACES.ALPHA
 say Alpha loading...
 
 team add alpha "§7Alpha"
@@ -55,7 +81,7 @@ scoreboard objectives add -BecomeAlpha trigger
 say Alpha loaded.
 
 #
-### RACE.SHADE
+### RACES.SHADE
 say Shade loading...
 
 team add shade "§0Shade"
@@ -64,9 +90,21 @@ scoreboard objectives add -BecomeShade trigger
 
 # tag add @s -BecomeShade
 
-scoreboard objectives add Testing.HardLight-Iterations dummy
+# scoreboard objectives add Testing.HardLight-Iterations dummy
 
 say Shade loaded.
+
+#
+### RACES.TRENT
+say Trent loading...
+
+team add trent "§2Trent"
+team modify trent prefix {"text":"§a[§2Trent§a]","color":"dark_green"}
+scoreboard objectives add -BecomeTrent trigger
+
+# tag add @s -BecomeTrent
+
+say Trent loaded.
 
 
 

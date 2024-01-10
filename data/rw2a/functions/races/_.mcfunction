@@ -32,3 +32,10 @@ scoreboard players set @a -BecomeAlpha 0
 scoreboard players enable @a -BecomeShade
 execute as @a[scores={-BecomeShade=1}] run function rw2a:races/mo/shade/_s/become/_0
 scoreboard players set @a -BecomeShade 0
+
+#
+### RACE.TRENT
+
+scoreboard players enable @a -BecomeTrent
+execute as @a[scores={-BecomeTrent=1}] run function rw2a:races/mo/trent/_s/become/_0
+scoreboard players set @a -BecomeTrent 0

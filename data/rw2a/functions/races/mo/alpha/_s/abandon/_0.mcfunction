@@ -1,4 +1,4 @@
 
-say i am no longer an shade male gamer
+say i am no longer an alpha male gamer
 
-tag @s remove races.shade
+tag @s remove races.alpha

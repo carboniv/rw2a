@@ -1,7 +1,7 @@
 
 scoreboard objectives add rw2a.Version dummy
 scoreboard players set $version rw2a.Version 1
-scoreboard players set $subversion rw2a.Version 3
+scoreboard players set $subversion rw2a.Version 4
 
 execute unless score $version rw2a.Version = #last-version rw2a.Version run scoreboard players set $version_launches rw2a.Version 0
 execute unless score $subversion rw2a.Version = #last-subversion rw2a.Version run scoreboard players set $subversion_launches rw2a.Version 0

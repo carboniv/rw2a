@@ -30,6 +30,9 @@ execute as @a[tag=!__MXID] run function rw2a:__/mxid/_s/give/_0
 execute as @e[tag=__MXID] run function rw2a:__/mxid/_s/_
 
 tag @a[tag=!__records] add __records
+execute as @e[tag=__projectile,predicate=!rw2a:nbt_inground] on origin run tag @s add __projectile-owner
+
+
 
 #
 ##

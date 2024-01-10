@@ -1,7 +1,7 @@
 
 scoreboard objectives add races.Version dummy
 scoreboard players set $version races.Version 3
-scoreboard players set $subversion races.Version 1
+scoreboard players set $subversion races.Version 2
 
 execute unless score $version races.Version = #last-version races.Version run scoreboard players set $version_launches races.Version 0
 execute unless score $subversion races.Version = #last-subversion races.Version run scoreboard players set $subversion_launches races.Version 0

@@ -1,0 +1,7 @@
+{
+	"replace": false,
+    "values": [
+		"#rw2a:projectile_item",
+		"#rw2a:projectile_summon"
+    ]
+}
